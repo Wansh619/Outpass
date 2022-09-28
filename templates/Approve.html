@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+<form method="POST" action="Approve">
+{% csrf_token %}
+<table>
+    <tr>
+        <th>
+            Roll number 
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Reason
+        </th>
+        <th>
+            Approve
+        </th>
+       
+
+    </tr>
+    {% for i in students %}
+    <tr>
+        <td>
+            {{i.roll_no}}
+        </td>
+        <td>
+            {{i.name}}
+        </td>
+        <td>
+            {{i.reasons}}
+        </td>
+        <td>
+            <input type="submit" value="{{i.email}}" name="Approved_students">
+            
+        </td>
+        
+
+        {% endfor %}
+    </tr>
+</table>
+
+
+
+</form>
+<form method="POST" action="Approve">
+    {% csrf_token %}
+<input type="submit" value="Reject" name="Approved_students">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+body{
+    background-color: goldenrod;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .top{
+      background-image: linear-gradient( rgb(8, 8, 95),rgb(35, 49, 129));
+    
+  }
+  
+  
+  
+  section{
+      background-color: wheat;
+      padding:60px;
+      padding-bottom: 70px;
+      margin: 5% 38%;
+   
+      margin-bottom: 3%;
+      
+  }
+  .form{
+    text-align: center;
+      padding: 5px;
+     
+  
+  box-sizing: border-box;
+  margin: 8px;
+  padding: 10px;
+  box-shadow: inset;
+  
+  }
+  .text{
+      padding: 4px;
+      background-color: rgb(195, 217, 236) ;
+  }
+  
+  textarea{
+  
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(195, 217, 236);
+  }
+  input [type=submit]
+  {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(195, 217, 236);
+  padding: 4px;
+  }
+  .submit{
+      background-color: olive;
+      padding: 5px;
+      color: white;
+      font-style: italic;
+      box-sizing: border-box;
+  }
+  .submit:hover{
+    border-color: blue;
+
+  }
+  
+  .menu{
+     text-align:right;
+     padding-bottom: 20px;
+  }
+  .menu ul li a{
+      text-decoration: none;
+      color: white;
+      border: 4px solid white;
+      border-radius: 15px;
+      padding: 7px;
+  }
+  .menu ul li{
+      padding: 7px;
+      display: block;
+      display: inline;
+  
+  }
+  .menu ul li a:hover{
+      background-color: white;
+      color: red;
+  
+  
+  }
+  .logo{
+      float: left;
+      color: white;
+  }
