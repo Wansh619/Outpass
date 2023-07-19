@@ -11,19 +11,15 @@ SERVER= sm.SMTP('smtp.gmail.com',587)
 SERVER.starttls()
 
 
-def sendmsg(email):
-    SERVER.login(EMAIL,PASSWORD)
-    SERVER.quit()
-    return SERVER.sendmail(EMAIL,email,MSG)
+# def sendmsg(email):
+#     SERVER.login(EMAIL,PASSWORD)
+#     SERVER.quit()
+#     return SERVER.sendmail(EMAIL,email,MSG)
 
 
 
-def passwordchecker(password):
-    if password.len()>8:
-
-
-
-
+# def passwordchecker(password):
+#     if password.len()>8:
 
 
 
@@ -43,7 +39,6 @@ def home(request):
         if Students.objects.filter(name=name ,reasons=reasons ).exists():
              messages.info(request,"YOUR SAME REQUEST IS ALREADY THERE")
              return redirect("home")
-        elif 
         else:
             student=Students(name=name,roll_no=roll_no,reasons=reasons,email=email)
             student.save()
@@ -57,9 +52,9 @@ def home(request):
 def Approve(request):
     if request.method=='POST':
         Approve_students=request.POST.get('Approved_students')
-            if Approve_students=='Reject':
-                Students.objects.all().delete()
-                return redirect('Approve')
+        if Approve_students=='Reject':
+            Students.objects.all().delete()
+            return redirect('Approve')
 
         
         Students.objects.filter(email=Approve_students).delete()
