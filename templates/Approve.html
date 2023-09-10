@@ -11,6 +11,9 @@
 {% for message in messages %}
 <h5>{{message}}</h5>
 {% endfor %}
+
+
+
 <form method="POST" action="Approve">
 {% csrf_token %}
 <table>
@@ -18,6 +21,7 @@
         <th>
             Roll number 
         </th>
+
         <th>
             Name
         </th>
@@ -25,10 +29,20 @@
             Reason
         </th>
         <th>
+            From(date)
+        </th>
+        <th>
+            From(time)
+        </th>
+        <th>
+            To(date)
+        </th>
+        <th>
+            To(time)
+        </th>
+        <th>
             Approve
         </th>
-       
-
     </tr>
     {% for i in students %}
     <tr>
@@ -42,8 +56,21 @@
             {{i.reasons}}
         </td>
         <td>
-            <input type="submit" value="{{i.email}}" name="Approved_students">
+            {{i.From|date:"d-m-Y"}}
+        </td>
+        <td>
+            {{i.From|time:"H-i-s"}}
             
+        </td>
+        <td>
+                  {{i.To|date:"d-m-Y"}}
+        </td>
+        <td>
+                  {{i.To|time:"H-i-s"}}
+            
+        </td>
+        <td>
+            <input type="submit" value="{{i.email}}" name="Approved_students">
         </td>
         
 

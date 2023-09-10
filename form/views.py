@@ -5,10 +5,10 @@ from django.contrib import messages
 import smtplib as sm
 
 
-PASSWORD='cmextopvyhmqmmlp'
-EMAIL='unitycreator619@gmail.com'
-SERVER= sm.SMTP('smtp.gmail.com',587)
-SERVER.starttls()
+# PASSWORD='cmextopvyhmqmmlp'
+# EMAIL='unitycreator619@gmail.com'
+# SERVER= sm.SMTP('smtp.gmail.com',587)
+# SERVER.starttls()
 
 
 # def sendmsg(email):
@@ -56,7 +56,6 @@ def Approve(request):
             Students.objects.all().delete()
             return redirect('Approve')
 
-        
         Students.objects.filter(email=Approve_students).delete()
         messages.info(request,"APPROVED")
         return redirect('Approve')
