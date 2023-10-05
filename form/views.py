@@ -43,7 +43,6 @@ def home(request):
         if Students.objects.filter(name=name ,reasons=reasons ).exists():
              messages.info(request,"YOUR SAME REQUEST IS ALREADY THERE")
              return redirect("home")
-        elif 
         else:
             student=Students(name=name,roll_no=roll_no,reasons=reasons,email=email)
             student.save()
