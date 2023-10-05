@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="Approve.css">
 </head>
 
-<body>
-    <div class="bg-dark fs-1 p-3 text-light">
-        Hi Admin
+<body class="bg-success-subtle">
+    <div class="bg-dark fs-1 p-3 text-light fw-bold mx-auto  ">
+       WELCOME  ADMIN
 
     </div>
     
@@ -20,18 +20,24 @@
 {% endfor %}
 <form method="POST" action="Approve">
 {% csrf_token %}
-<table class="table m-5 table-dark table-striped">
+<table class="table m-5 table-warning table-striped">
     <tr>
-        <th id="a"   class="heading">
+        <th id="a"   class="heading text-danger fs-3">
             NAME 
         </th>
-        <th id="b" class="heading">
+        <th id="b" class="heading text-danger fs-3">
             ROLL NO.
         </th>
-        <th id="c" class="heading">
+        <th id="c" class="heading text-danger fs-3">
             REASON
         </th>
-        <th id="d" class="heading">
+        <th id="c" class="heading text-danger fs-3">
+            DATE
+        </th>
+        <th id="c" class="heading text-danger fs-3">
+            TIME
+        </th>
+        <th id="d" class="heading text-danger fs-3">
             APPROVE
         </th>
        
@@ -39,17 +45,23 @@
     </tr>
     {% for i in students %}
     <tr>
-        <td>
+        <td class="text-primary fs-5 fw-bold">
            {{i.roll_no}}
         </td>
-        <td>
+        <td class="text-primary fs-5 fw-bold">
            {{i.name}}
         </td>
-        <td>
+        <td class="text-primary fs-5 fw-bold">
            {{i.reasons}}
         </td>
-        <td>
-           <input type="submit" value="{{i.email}}" name="Approved_students">
+        <td class="text-primary fs-5 fw-bold">
+            {{i.date}}
+         </td>
+         <td class="text-primary fs-5 fw-bold">
+            {{i.time}}
+         </td>
+        <td >
+           <input class="bg-success-subtle text-primary fw-bold"  type="submit" value="{{i.email}}" name="Approved_students">
             
         </td>
         
@@ -63,7 +75,7 @@
 </form>
 <form method="POST" action="Approve">
     {% csrf_token %}
-<input type="submit" class="btn btn-secondary" value="Reject" name="Approved_students"> 
+<input class="fs-5 m-5 text-white bg-secondary fw-bold" type="submit" class="btn btn-secondary" value="REJECT" name="Approved_students"> 
 </form>
 
 
