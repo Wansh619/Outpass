@@ -49,7 +49,7 @@ def home(request):
             messages.info(request,"YOUR REQUEST HAS GOT REGISTERED")
             return redirect('home')
     else:
-        return render(request,'index.html')
+        return render(request,'home.html')
     
 
 
